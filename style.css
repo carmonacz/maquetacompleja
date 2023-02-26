@@ -28,10 +28,21 @@ nav menu {
 /* MAIN */
 main {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
 
   gap: 1rem;
+}
+
+article {
+  position: relative;
+}
+
+article p.price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* FOOTER */
@@ -49,7 +60,7 @@ footer {
     grid-template-rows: 5rem 1fr;
   }
 
-  /* HEADER */
+  /* HEADER Y FOOTER*/
 
   header,
   footer {
@@ -58,23 +69,23 @@ footer {
 
   body > header {
     flex-direction: row;
+    justify-content: space-between;
   }
+
+  footer {
+    align-items: center;
+    height: 2rem;
+    gap: 2rem;
+  }
+
+  /* NAV*/
 
   body > nav,
   main {
     grid-row: span 2;
   }
 
-  /* NAV*/
-
   body > nav menu {
     flex-direction: column;
-  }
-
-  /* FOOTER */
-  footer {
-    align-items: center;
-    height: 2rem;
-    gap: 2rem;
   }
 }
