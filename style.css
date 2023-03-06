@@ -11,17 +11,25 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  justify-content: space-evenly;
 }
 
-header menu a {
-  margin: 0.5rem;
+header form {
+  display: flex;
+}
+
+header menu {
+  display: flex;
+  gap: 1rem;
+}
+
+header li {
+  display: flex;
 }
 
 /* NAV*/
 
-nav menu {
+body > nav menu {
   display: flex;
 }
 
@@ -29,9 +37,7 @@ nav menu {
 main {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-evenly;
-
   gap: 1rem;
 }
 
@@ -45,19 +51,31 @@ article p.price {
   bottom: 0;
 }
 
+/* Otra opción para el article con display flex
+
+article {
+  display: flex;
+  flex-direction: colum;
+}
+
+article .description{
+  flex-grow:1;// Se le pone 1 para que ocupa todo el espacio por defecto siempre tiene 0 por eso le ponemos 1 para que crezca y ocupe todo el espacio// Si al título le pones flex-grow:2, crecerá más que la description ya que tiene un valor mayor.
+}
+
+*/
+
 /* FOOTER */
 footer {
   display: flex;
-  justify-content: center;
-
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* MEDIA QUERY */
 @media (min-width: 600px) {
   body {
     grid-template-columns: 10rem 1fr;
-    grid-template-rows: 5rem 1fr;
+    grid-template-rows: 5rem 1fr 2rem;
   }
 
   /* HEADER Y FOOTER*/
@@ -73,17 +91,11 @@ footer {
   }
 
   footer {
-    align-items: center;
-    height: 2rem;
+    justify-content: center;
     gap: 2rem;
   }
 
   /* NAV*/
-
-  body > nav,
-  main {
-    grid-row: span 2;
-  }
 
   body > nav menu {
     flex-direction: column;
